@@ -1,0 +1,25 @@
+<% if @results.present? %>
+  <div class="results-container">
+    <table class="results-table">
+      <thead>
+        <tr>
+          <% @results.keys.each do |key| %>
+            <th class="results-header"><%= key %></th>
+          <% end %>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @results.each do |record| %>
+          <tr class="results-row">
+            <% record.each do |value| %>
+              <td class="results-cell"><%= value %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <p class="empty-text">No results found.</p>
+<% end %>
